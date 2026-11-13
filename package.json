@@ -1,0 +1,26 @@
+{
+  "name": "zhixue-workshop",
+  "version": "8.0.0",
+  "private": true,
+  "description": "智学工坊 — 员工库 + 培训管理 + 我的学习，带 BKT 掌握度与间隔复习",
+  "scripts": {
+    "test": "node tests/learning.js && node tests/auth.js && node tests/train.js && node tests/staff.js && node tests/material.js && node tests/learn.js",
+    "test:learning": "node tests/learning.js",
+    "test:auth": "node tests/auth.js",
+    "test:train": "node tests/train.js",
+    "test:material": "node tests/material.js",
+    "test:learn": "node tests/learn.js",
+    "test:layout": "node tests/layout.js",
+    "test:mobile": "node tests/mobile.js",
+    "test:quality": "node tests/quality.js",
+    "test:ai": "node tests/ai-path.js",
+    "visual": "node tests/visual.js",
+    "fixtures": "node tests/make-fixtures.js",
+    "test:all": "node tests/make-fixtures.js && node tests/learning.js && node tests/auth.js && node tests/train.js && node tests/staff.js && node tests/material.js && node tests/learn.js && node tests/layout.js && node tests/mobile.js && node tests/quality.js && node tests/ai-path.js",
+    "test:staff": "node tests/staff.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.0",
+    "xlsx": "^0.18.5"
+  }
+}

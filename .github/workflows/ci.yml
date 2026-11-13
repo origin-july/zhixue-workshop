@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  check:
+    name: 语法与结构检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 检查所有 JS 语法
+        run: |
+          fail=0
+          for f in assets/*.js lib/*.js tests/*.js; do
+            node --check "$f" || { echo "❌ $f"; fail=1; }
+          done
+          if [ $fail -eq 0 ]; then echo "✅ 全部通过"; fi
+          exit $fail
+
+      - name: 检查脚本加载顺序与文件存在
+        run: node scripts/check-refs.js
+
+  test:
+    name: 浏览器测试
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 安装依赖
+        run: npm ci || npm install
+
+      - name: 安装 Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: 生成测试素材
+        run: npm run fixtures
+
+      - name: 学习引擎（BKT / FSRS）
+        run: npm run test:learning
+
+      - name: 账号与员工库
+        run: npm run test:auth
+
+      - name: 培训管理
+        run: npm run test:train
+
+      - name: 我的学习
+        run: npm run test:learn
+
+      - name: 布局与字号
+        run: npm run test:layout
+
+      - name: 手机端
+        run: npm run test:mobile

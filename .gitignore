@@ -1,0 +1,32 @@
+# 依赖
+node_modules/
+
+# 测试产物（截图、导出的 CSV、EML）
+tests/out/
+out/
+
+# 内部规划文档与工作记录，不进公开仓库
+开源与版本管理方案.md
+overview.md
+.workbuddy/
+
+# 应用发布标记文件
+.wbapp_*.genie
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 本地临时文件
+*.log
+*.tmp
+*~
+
+# 压缩包（不进版本库，需要时单独发）
+*.zip
