@@ -24,7 +24,7 @@
 ## 跑起来
 
 ```bash
-git clone https://github.com/{{GITHUB_USER}}/zhixue-workshop.git
+git clone https://github.com/origin-july/zhixue-workshop.git
 cd zhixue-workshop
 python3 -m http.server 8080   # 打开 http://localhost:8080
 ```

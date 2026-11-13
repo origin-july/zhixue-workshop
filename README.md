@@ -41,7 +41,7 @@
 ## 快速开始
 
 ```bash
-git clone https://github.com/{{GITHUB_USER}}/zhixue-workshop.git
+git clone https://github.com/origin-july/zhixue-workshop.git
 cd zhixue-workshop
 ```
 
