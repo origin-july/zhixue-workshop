@@ -4,7 +4,7 @@
 
 纯前端，不需要服务器、不需要数据库、不需要装环境。下载下来双击 `index.html` 就能用。
 
-[在线演示](https://zhixue-workshop.app.workbuddy.host/?sharecode=73MUE3UHCF) · [5 分钟上手](#快速开始) · [MIT 许可证](LICENSE)
+[在线演示](https://origin-july.github.io/zhixue-workshop/) · [5 分钟上手](#快速开始) · [MIT 许可证](LICENSE)
 
 ![管理端看板](docs/screenshots/board.png)
 
